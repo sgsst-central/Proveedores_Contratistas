@@ -1,8 +1,4 @@
-/* ============================================================
-   PROVEEDORES.CSS — todos los colores via variables
-   ============================================================ */
 
-/* ── TOPBAR ── */
 .logo-topbar {
   max-width: 150px;
   max-height: 52px;
@@ -481,7 +477,7 @@ body {
 .puntaje-tabla tr:nth-child(even) td { background: var(--gris-suave); }
 
 .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
-.badge.aprobado  reglas-lista{ background: var(--color-exito-suave);      color: var(--color-exito); }
+.badge.aprobado  { background: var(--color-exito-suave);      color: var(--color-exito); }
 .badge.mejora    { background: var(--color-advertencia-suave); color: var(--color-advertencia); }
 .badge.rechazado { background: var(--color-acento-suave);      color: var(--color-acento-oscuro); }
 
