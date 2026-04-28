@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartillas SST</title>
+
+  <style>
+    :root{
+      --rojo:#d62e27;
+      --rojo-oscuro:#b92520;
+      --azul:#2275b5;
+      --azul-oscuro:#195d92;
+      --azul-suave:#eaf4fc;
+      --rojo-suave:#fdeceb;
+      --blanco:#ffffff;
+      --fondo:#f4f7fb;
+      --texto:#1f2d3d;
+      --texto-suave:#5f6f81;
+      --borde:#dbe6f2;
+      --sombra:0 12px 34px rgba(34,117,181,.12);
+      --radio:22px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(214,46,39,.10), transparent 20%),
+        radial-gradient(circle at bottom left, rgba(34,117,181,.12), transparent 25%),
+        linear-gradient(135deg, #eef4fb 0%, #f8fbff 100%);
+      color:var(--texto);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .contenedor{
+      width:100%;
+      max-width:1100px;
+      background:var(--blanco);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--sombra);
+      border:1px solid rgba(34,117,181,.08);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg, var(--azul) 0%, var(--azul-oscuro) 100%);
+      color:var(--blanco);
+      padding:44px 34px 50px;
+      text-align:center;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      background:rgba(255,255,255,.07);
+      top:-110px;
+      right:-70px;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:rgba(214,46,39,.16);
+      bottom:-90px;
+      left:-70px;
+    }
+
+    .hero-contenido{
+      position:relative;
+      z-index:1;
+    }
+
+    .logo-wrap{
+      display:flex;
+      justify-content:center;
+      margin-bottom:18px;
+    }
+
+    .logo-empresa{
+      max-width:190px;
+      max-height:90px;
+      object-fit:contain;
+      background:rgba(255,255,255,.08);
+      padding:8px 12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      color:#ffffff;
+      font-weight:700;
+      font-size:12px;
+      letter-spacing:1.6px;
+      text-transform:uppercase;
+      padding:9px 18px;
+      border-radius:999px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:42px;
+      line-height:1.12;
+      margin-bottom:12px;
+    }
+
+    .sub{
+      max-width:720px;
+      margin:0 auto;
+      color:rgba(255,255,255,.88);
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .franja{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .pill{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:999px;
+      padding:10px 16px;
+      font-size:13px;
+      color:#fff;
+    }
+
+    .cuerpo{
+      padding:36px 28px 42px;
+      background:var(--fondo);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+
+    .card{
+      background:var(--blanco);
+      border-radius:var(--radio);
+      padding:28px;
+      box-shadow:0 8px 24px rgba(31,45,61,.06);
+      border:1px solid rgba(34,117,181,.08);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:6px;
+      background:linear-gradient(90deg, var(--rojo) 0%, var(--azul) 100%);
+    }
+
+    .icono{
+      width:58px;
+      height:58px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:18px;
+      background:var(--azul-suave);
+      color:var(--azul);
+      font-size:26px;
+      font-weight:bold;
+    }
+
+    .card h2{
+      color:var(--azul);
+      font-size:26px;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:var(--texto-suave);
+      font-size:15px;
+      line-height:1.7;
+      margin-bottom:18px;
+    }
+
+    .lista{
+      margin-bottom:24px;
+      padding-left:18px;
+      color:#425466;
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    .lista li::marker{
+      color:var(--rojo);
+    }
+
+    .botones{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .boton{
+      border:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      background:linear-gradient(135deg, var(--rojo) 0%, var(--rojo-oscuro) 100%);
+      color:var(--blanco);
+      font-weight:700;
+      padding:14px 22px;
+      border-radius:14px;
+      transition:.22s ease;
+      box-shadow:0 8px 18px rgba(214,46,39,.20);
+      font-size:14px;
+    }
+
+    .boton.secundario{
+      background:linear-gradient(135deg, var(--azul) 0%, var(--azul-oscuro) 100%);
+      box-shadow:0 8px 18px rgba(34,117,181,.20);
+    }
+
+    .boton:hover{
+      transform:translateY(-2px);
+    }
+
+    .pie{
+      text-align:center;
+      margin-top:28px;
+      font-size:13px;
+      color:#6b7b8c;
+    }
+
+    @media (max-width: 820px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:32px;
+      }
+
+      .hero{
+        padding:42px 22px 36px;
+      }
+
+      .cuerpo{
+        padding:24px 16px 30px;
+      }
+
+      .card{
+        padding:24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="hero">
+      <div class="hero-contenido">
+
+        <div class="logo-wrap">
+          <img
+            src="logo.png"
+            alt="Logo empresa"
+            class="logo-empresa"
+            onerror="this.style.display='none'"
+          >
+        </div>
+
+        <div class="badge">Sistema de Gestión SST</div>
+        <h1>Cartillas SST para consulta y visualización</h1>
+        <p class="sub">
+          Accede a la cartilla correspondiente según el tipo de tercero.
+          Aquí encontrarás lineamientos, requisitos, controles y orientaciones
+          para contratistas y proveedores.
+        </p>
+
+        <div class="franja">
+          <div class="pill">Contratistas</div>
+          <div class="pill">Proveedores</div>
+          <div class="pill">Consulta rápida</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cuerpo">
+      <div class="grid">
+        <div class="card">
+          <div class="icono">C</div>
+          <h2>Contratistas</h2>
+          <p>
+            Consulta la cartilla completa con requisitos documentales, control en campo,
+            semáforo, EPP, trabajos de alto riesgo, emergencias, prohibiciones y firma final.
+          </p>
+          <ul class="lista">
+            <li>Proceso en 7 etapas</li>
+            <li>Documentos SG-SST y del personal</li>
+            <li>Control en campo y reevaluación</li>
+          </ul>
+          <div class="botones">
+            <a class="boton" href="cartilla_contratistas.html">Abrir cartilla de contratistas</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icono">P</div>
+          <h2>Proveedores</h2>
+          <p>
+            Consulta la cartilla completa con flujo del proceso, documentos, evaluación,
+            estados, bienes SST, reevaluación anual y reglas importantes.
+          </p>
+          <ul class="lista">
+            <li>Flujo del proceso</li>
+            <li>Evaluación inicial y desempeño</li>
+            <li>Estados y control maestro</li>
+          </ul>
+          <div class="botones">
+            <a class="boton secundario" href="cartilla_proveedores.html">Abrir cartilla de proveedores</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pie">
+        Área SST y Compras · Visualización local en VS Code
+      </div>
+    </div>
+  </div>
+</body>
+</html>

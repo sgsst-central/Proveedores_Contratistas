@@ -1,0 +1,12 @@
+/* ============================================================
+   THEMES.CSS — variantes de tema (sobreescriben variables.css)
+   ============================================================ */
+
+html.theme-corporativo {
+  --color-primario:        #2275b5;
+  --color-primario-oscuro: #195d92;
+  --color-primario-suave:  #e8f2fb;
+  --color-acento:          #d62e27;
+  --color-acento-oscuro:   #b32420;
+  --color-acento-suave:    #fdecea;
+}

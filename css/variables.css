@@ -1,0 +1,61 @@
+/* ============================================================
+   VARIABLES DE DISEÑO — SISTEMA DE COLOR CENTRALIZADO
+   Paleta: #d62e27 | #2275b5 | #000000 | #ffffff
+   ============================================================ */
+
+:root {
+
+  /* --- COLORES BASE --- */
+  --rojo:         #d62e27;
+  --rojo-oscuro:  #b32420;
+  --rojo-suave:   #fdecea;
+
+  --azul:         #2275b5;
+  --azul-oscuro:  #195d92;
+  --azul-claro:   #e8f2fb;
+
+  --negro:        #000000;
+  --blanco:       #ffffff;
+
+  /* --- ESCALA DE GRISES --- */
+  --gris-texto:   #1a1a1a;
+  --gris-oscuro:  #333333;
+  --gris-medio:   #666666;
+  --gris-suave:   #f2f4f7;
+  --gris-borde:   #e0e4eb;
+
+  /* --- COLORES SEMÁNTICOS ---
+     Solo toca aquí para cambiar todo el proyecto. */
+  --color-primario:        var(--azul);
+  --color-primario-oscuro: var(--azul-oscuro);
+  --color-primario-suave:  var(--azul-claro);
+
+  --color-acento:          var(--rojo);
+  --color-acento-oscuro:   var(--rojo-oscuro);
+  --color-acento-suave:    var(--rojo-suave);
+
+  /* Verde y naranja solo para semáforos/estados */
+  --color-exito:           #2e7d32;
+  --color-exito-suave:     #e8f5e9;
+  --color-advertencia:     #e65100;
+  --color-advertencia-suave:#fff3e0;
+
+  /* --- LEGADO (compatibilidad con clases existentes) --- */
+  --verde:        var(--color-acento);
+  --verde-suave:  var(--color-acento-suave);
+  --naranja:      var(--color-advertencia);
+  --naranja-suave:var(--color-advertencia-suave);
+
+  /* --- SOMBRAS --- */
+  --sombra-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --sombra-leve: 0 2px 8px  rgba(0, 0, 0, 0.06);
+}
+
+html.theme-corporativo {
+  --color-primario:        #2275b5;
+  --color-primario-oscuro: #195d92;
+  --color-primario-suave:  #e8f2fb;
+  --color-acento:          #d62e27;
+  --color-acento-oscuro:   #b32420;
+  --color-acento-suave:    #fdecea;
+}
